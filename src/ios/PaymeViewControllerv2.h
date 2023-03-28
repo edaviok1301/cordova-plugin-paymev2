@@ -3,7 +3,7 @@
 #import "CordovaPluginPaymev2.h"
 #import "Firebase.h"
 
-@interface Paym2ViewControllerv2 : UIViewController<PaymeClientDelegate>
+@interface PaymeViewControllerv2 : UIViewController<PaymeClientDelegate>
 
 + (instancetype)sharedHelper:(NSDictionary *)inputRequest callback:(NSString *)callbackid;
 - (id)initWithArgs:(NSDictionary *)request;
