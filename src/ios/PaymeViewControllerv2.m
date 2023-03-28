@@ -1,6 +1,6 @@
 #import "PaymeViewControllerv2.h"
 
-@implementation Paym2ViewControllerv2
+@implementation PaymeViewControllerv2
 
 @synthesize setEnviroment;
 @synthesize request = _request;
