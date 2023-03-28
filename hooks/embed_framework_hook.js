@@ -24,7 +24,7 @@ module.exports = function (ctx) {
         var frameworkMastercardSonic = "MastercardSonic.xcframework";
         var frameworkVisaSensoryBranding = "VisaSensoryBranding.xcframework";
 
-        var frameworks = ["Payme.xcframework","SecureKey3DS.xcframework","MastercardSonic.xcframework","VisaSensoryBranding.xcframework"];
+        var frameworks = ["SecureKey3DS.xcframework","MastercardSonic.xcframework","VisaSensoryBranding.xcframework","Paymev2.xcframework"];
 
         /*var fs = ctx.requireCordovaModule("fs");
         var path = ctx.requireCordovaModule("path");
