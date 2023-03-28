@@ -13,7 +13,7 @@
 		<config-file parent="/*" target="AndroidManifest.xml"/>
 		<source-file src="src/android/CordovaPluginPaymev2.java" target-dir="src/com/os/payme/CordovaPluginPaymev2"/>
 
-		<resource-file src="src/android/lib/Paymev2.aar" target="libs/Payme.aar"/>
+		<resource-file src="src/android/lib/Paymev2.aar" target="libs/Paymev2.aar"/>
 		<resource-file src="src/android/lib/MastercardSonic.aar" target="libs/MastercardSonic.aar"/>
 		<resource-file src="src/android/lib/SecureKey3DS.aar" target="libs/SecureKey3DS.aar"/>
 		<resource-file src="src/android/lib/VisaSensoryBranding.aar" target="libs/VisaSensoryBranding.aar"/>
