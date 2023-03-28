@@ -52,6 +52,7 @@ public class CordovaPluginPaymev2 extends CordovaPlugin implements PaymeClientDe
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext newcallbackContext) throws JSONException {
         callbackContext=newcallbackContext;
+        final Context context = this.cordova.getActivity().getApplicationContext();
         Log.d(TAG, "execute plugin");
         if (action.equals("initPayme")) {
             mFirebaseAnalytics = FirebaseAnalytics.getInstance(context);
