@@ -1,4 +1,4 @@
-#import "Paym2ViewControllerv2.h"
+#import "PaymeViewControllerv2.h"
 
 @implementation Paym2ViewControllerv2
 
