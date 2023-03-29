@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="com.os.payme" version="2.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>CordovaPluginPaymev2</name>
+
 	<js-module name="CordovaPluginPaymev2" src="www/CordovaPluginPaymev2.js">
 		<clobbers target="cordova.plugins.CordovaPluginPaymev2"/>
 	</js-module>
+
 	<platform name="android">
 		<config-file parent="/*" target="res/xml/config.xml">
 			<feature name="CordovaPluginPaymev2">
@@ -13,12 +15,12 @@
 		<config-file parent="/*" target="AndroidManifest.xml"/>
 		<source-file src="src/android/CordovaPluginPaymev2.java" target-dir="src/com/os/payme/CordovaPluginPaymev2"/>
 
-		<resource-file src="src/android/lib/Paymev2.aar" target="libs/Paymev2.aar"/>
-		<resource-file src="src/android/lib/MastercardSonic.aar" target="libs/MastercardSonic.aar"/>
-		<resource-file src="src/android/lib/SecureKey3DS.aar" target="libs/SecureKey3DS.aar"/>
-		<resource-file src="src/android/lib/VisaSensoryBranding.aar" target="libs/VisaSensoryBranding.aar"/>
-
 		<framework  src="src/android/file.gradle" custom="true" type="gradleReference"/>
+
+		<resource-file src="src/android/aar/Paymev2.aar" target="libs/Paymev2.aar"/>
+		<resource-file src="src/android/aar/MastercardSonic.aar" target="libs/MastercardSonic.aar"/>
+		<resource-file src="src/android/aar/SecureKey3DS.aar" target="libs/SecureKey3DS.aar"/>
+		<resource-file src="src/android/aar/VisaSensoryBranding.aar" target="libs/VisaSensoryBranding.aar"/>
 	</platform>
 	
 	<platform name="ios">
