@@ -1,5 +1,6 @@
 package com.os.payme;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -139,6 +140,7 @@ public class CordovaPluginPaymev2 extends CordovaPlugin implements PaymeClientDe
         return new PaymeRequest(paymeMerchantData,paymeFeatureData,paymeSettingData);
     }
 
+    @SuppressLint("LongLogTag")
     private void launchPayme(JSONObject request) throws JSONException{
         String environment=request.getString("environment");
         PaymeEnvironment paymeEnvironment = (environment.equals("1"))?PaymeEnvironment.PRODUCTION:PaymeEnvironment.DEVELOPMENT;
@@ -153,7 +155,7 @@ public class CordovaPluginPaymev2 extends CordovaPlugin implements PaymeClientDe
 
         PaymeRequest paymeRequest = setParamsMerchant(request);
 
-        PaymeClient paymeClient = new PaymeClient(SdkPaymev2.this,request.getString("identifier"));
+        PaymeClient paymeClient = new PaymeClient(CordovaPluginPaymev2.this,request.getString("identifier"));
         paymeClient.setEnvironment(paymeEnvironment);
         String gson = new Gson().toJson(paymeRequest);
         Log.i(TAG+"-request",gson);
