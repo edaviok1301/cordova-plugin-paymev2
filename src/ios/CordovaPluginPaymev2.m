@@ -29,7 +29,7 @@ CordovaPluginPaymev2 *cordovaPluginPayme;
                                       options:0
                                         error:&jsonError];
 
-        PayViewControllerv2 *pvc = [PayViewControllerv2 sharedHelper:jsonData callback:self.responsePayCallbackId];
+        PaymeViewControllerv2 *pvc = [PaymeViewControllerv2 sharedHelper:jsonData callback:self.responsePayCallbackId];
         pvc.request = [[NSDictionary alloc] initWithDictionary:jsonData copyItems:YES];
         [pvc presentPayMeControllerWithDelegate:jsonData];
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
