@@ -12,10 +12,10 @@ CordovaPluginPaymev2 *cordovaPluginPayme;
     return cordovaPluginPayme;
 }
 
-- (void)pluginInitialize {
+/*- (void)pluginInitialize {
     NSLog(@"CordovaPluginPaymev2 - Starting plugin");
     cordovaPluginPayme = self;
-}
+}*/
 
 - (void)initPayme:(CDVInvokedUrlCommand*)command
 {
