@@ -42,8 +42,7 @@ NSString  *operationNumberG = nil;
     dispatch_async(dispatch_get_main_queue(), ^{
         UIViewController *uvc = [[[UIApplication sharedApplication] keyWindow] rootViewController];
 
-        
-        NSLog([self.request objectForKey:@"identifier"]);
+        NSLog(@"key"+[self.request objectForKey:@"identifier"]);
         PaymeClient * pc = [[PaymeClient alloc] initWithDelegate:self key:[self.request objectForKey:@"identifier"]];
         [pc setEnvironmentWithEnvironment:[self setEnviroment]];
         [pc authorizeTransactionWithController:uvc usePresent:true paymeRequest:[self setParamsMerchant:request]];
