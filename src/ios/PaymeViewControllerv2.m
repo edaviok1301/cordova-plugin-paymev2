@@ -212,7 +212,7 @@ NSString  *operationNumberG = nil;
     NSString *name = [request objectForKey:@"name"];
     NSString *value = [request objectForKey:@"value"];
     NSMutableDictionary<NSString *, NSString *> *reserved = [NSMutableDictionary dictionary];
-    [reserved setObject:value forKey:name];
+    [reserved setObject:(value?value:@"1") forKey:(name?name:@"reserved1")];
     
     NSString *userCode = [request objectForKey:@"userCommerce"];
     NSString *planQuota = [request objectForKey:@"planQuota"];
