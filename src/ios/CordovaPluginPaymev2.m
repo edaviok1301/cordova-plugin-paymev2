@@ -45,10 +45,10 @@ CordovaPluginPaymev2 *cordovaPluginPayme;
 - (void)sendResponsePay:(NSString *)responseText callbackId:(NSString *)callbackId
 {
     if (callbackId != nil) {
-        NSLog(@"In response = %@",self.responsePayCallbackId);
+        NSLog(@"In response = %@",callbackId);
         CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:responseText];
         [pluginResult setKeepCallbackAsBool:NO];
-       [self.commandDelegate sendPluginResult:pluginResult callbackId:self.responsePayCallbackId];
+       [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
     }
 }
 
