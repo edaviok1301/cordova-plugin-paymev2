@@ -147,6 +147,9 @@ NSString  *operationNumberG = nil;
     NSString *jsonResponseText = [[NSString alloc] initWithData:jsonResponseData encoding:NSUTF8StringEncoding];
     NSLog(@"RESPONSE %@",main);
     
+    CordovaPluginPaymev2 *pluginPayme = [[CordovaPluginPaymev2 alloc] init];
+    [pluginPayme sendResponsePay:jsonResponseText callbackId:self.callbackId];
+    
     [CordovaPluginPaymev2.cordovaPluginPayme sendResponsePay:jsonResponseText callbackId:self.callbackId];
     
     self.resultResponse = @"1";
