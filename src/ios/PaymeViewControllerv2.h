@@ -10,6 +10,7 @@
 - (void)presentPayMeControllerWithDelegate:(NSDictionary *)request;
 - (NSString *)validateEmptyOrNull:(NSString *)value;
 - (NSDictionary *) logEvent:(NSString *)eventCategory eventAction:(NSString *)eventAction eventLabel:(NSString *)eventLabel;
+- (PaymeRequest * )setParamsMerchant:(NSDictionary *)request;
 
 @property (strong, nonatomic) NSDictionary* request;
 @property (strong, nonatomic) NSString *resultResponse;
