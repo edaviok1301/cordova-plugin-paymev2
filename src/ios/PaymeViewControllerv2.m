@@ -39,6 +39,7 @@ NSString  *operationNumberG = nil;
     }
     self.resultResponse = @"0";
     //Conseguir ruta del View Controller Actual
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         UIViewController *uvc = [[[UIApplication sharedApplication] keyWindow] rootViewController];
 
@@ -150,9 +151,9 @@ NSString  *operationNumberG = nil;
     CordovaPluginPaymev2 *pluginPayme = [[CordovaPluginPaymev2 alloc] init];
     [pluginPayme sendResponsePay:jsonResponseText callbackId:self.callbackId];
     
-    [CordovaPluginPaymev2.cordovaPluginPayme sendResponsePay:jsonResponseText callbackId:self.callbackId];
-    
-    self.resultResponse = @"1";
+//    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:jsonResponseText];
+//    [pluginResult setKeepCallbackAsBool:NO];
+//   [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
     
 }
 
