@@ -21,20 +21,20 @@ CordovaPluginPaymev2 *cordovaPluginPayme;
 {
     
     self.responsePayCallbackId = command.callbackId;
+    NSLog(@"callback %@",self.responsePayCallbackId);
     if (self.responsePayCallbackId != nil) {
-        NSMutableString *jsonString = [command.arguments objectAtIndex:0];
-        NSError *jsonError;
-        NSData *objectData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:objectData
-                                      options:0
-                                        error:&jsonError];
-
-        PaymeViewControllerv2 *pvc = [PaymeViewControllerv2 sharedHelper:jsonData callback:self.responsePayCallbackId];
-        pvc.request = [[NSDictionary alloc] initWithDictionary:jsonData copyItems:YES];
-        [pvc presentPayMeControllerWithDelegate:jsonData];
-        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
-        [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
-        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSMutableString *jsonString = [command.arguments objectAtIndex:0];
+            NSError *jsonError;
+            NSData *objectData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+            NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:objectData options:0 error:&jsonError];
+        
+            PaymeViewControllerv2 *pvc = [PaymeViewControllerv2 sharedHelper:jsonData callback:self.responsePayCallbackId];
+            pvc.request = [[NSDictionary alloc] initWithDictionary:jsonData copyItems:YES];
+            [pvc presentPayMeControllerWithDelegate:jsonData];
+        });
+        
     } else {
         CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
