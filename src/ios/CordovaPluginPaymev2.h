@@ -10,5 +10,6 @@
 - (void)sendResponsePay:(NSString *)responseText callbackId:(NSString *)callbackId;
 
 @property (copy, nonatomic) NSString *responsePayCallbackId;
+@property NSInteger enviroment;
 
 @end
