@@ -48,7 +48,9 @@ CordovaPluginPaymev2 *cordovaPluginPayme;
         NSLog(@"In response = %@",callbackId);
         CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:responseText];
         [pluginResult setKeepCallbackAsBool:NO];
-       [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+        NSLog(@"In response = %@",pluginResult);
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+        NSLog(@"In response fin");
     }
 }
 
